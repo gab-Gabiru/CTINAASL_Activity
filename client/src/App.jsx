@@ -1,122 +1,184 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+const styles = `
+* {
+  box-sizing: border-box;
 }
 
-export default App
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* Header */
+header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+/* Navigation bar */
+.navbar {
+  display: flex;
+  background-color: #333;
+}
+
+.navbar a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Content layout */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.side {
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.main {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Placeholder images */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive design */
+@media screen and (max-width: 700px) {
+  .container,
+  .navbar {
+    flex-direction: column;
+  }
+}
+`;
+
+function App() {
+  return (
+    <>
+      <style>{styles}</style>
+
+      <div style={{
+        background: "yellow",
+        padding: "5px",
+        textAlign: "center"
+      }}>
+        <h4>Resize the browser window to see the responsive effect.</h4>
+      </div>
+
+      <header>
+        <h1>My Website</h1>
+        <p>With a <b>flexible</b> layout.</p>
+      </header>
+
+      <nav className="navbar">
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+      </nav>
+
+      <div className="container">
+
+        {/* Sidebar */}
+        <aside className="side">
+          <h2>About Me</h2>
+          <h5>Photo of me:</h5>
+
+          <div className="fakeimg" style={{ height: 200 }}>
+            Image
+          </div>
+
+          <p>
+            Some text about me in culpa qui officia deserunt mollit anim..
+          </p>
+
+          <h3>More Text</h3>
+          <p>Lorem ipsum dolor sit ame.</p>
+
+          <div className="fakeimg" style={{ height: 60 }}>
+            Image
+          </div>
+          <br />
+
+          <div className="fakeimg" style={{ height: 60 }}>
+            Image
+          </div>
+          <br />
+
+          <div className="fakeimg" style={{ height: 60 }}>
+            Image
+          </div>
+        </aside>
+
+        {/* Main Content */}
+        <main className="main">
+          <h2>TITLE HEADING</h2>
+          <h5>Title description, Oct 7, 2025</h5>
+
+          <div className="fakeimg" style={{ height: 200 }}>
+            Image
+          </div>
+
+          <p>Some text..</p>
+
+          <p>
+            Sunt in culpa qui officia deserunt mollit anim id est laborum
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+            nostrud exercitation ullamco.
+          </p>
+
+          <br />
+
+          <h2>TITLE HEADING</h2>
+          <h5>Title description, Sep 2, 2025</h5>
+
+          <div className="fakeimg" style={{ height: 200 }}>
+            Image
+          </div>
+
+          <p>Some text..</p>
+
+          <p>
+            Sunt in culpa qui officia deserunt mollit anim id est laborum
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+            nostrud exercitation ullamco.
+          </p>
+        </main>
+
+      </div>
+
+      {/* Footer */}
+      <footer>
+        <h2>Footer</h2>
+      </footer>
+    </>
+  );
+}
+
+export default App;
