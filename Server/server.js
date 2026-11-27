@@ -3,7 +3,8 @@ const connectDB = require("./components/Config/dbConnect");
 const app = express();
 connectDB();
 const userRouter = require("./components/router/userRouter");
-
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
