@@ -1,0 +1,13 @@
+footer {
+  padding-bottom: 80px;
+}
+
+.copyright-text p {
+  margin: 5px;
+}
+
+@media only screen and (max-width: 992px) {
+  footer {
+    padding-bottom: 10vw;
+  }
+}
